@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="glass">
+  <h2 class="green-title text-center">About This Project</h2>
+  <p>This system identifies plant species from leaf images using a Convolutional Neural Network (CNN) built with TensorFlow/Keras and served with Flask. After prediction it shows the common name, scientific name, regions found in India, medicinal uses and a confidence score.</p>
+  <p><b>Developed by: </b>Shiddalingesh  Neeralagi (2414104970)<br>
+     <b>Guide: </b> Prof. Abhishek .S. G, BCA<br>
+     <b>University: </b>Manipal University, Jaipur</p>
+  <p class="note">Medicinal information is for educational purposes only.</p>
+  <div class="text-center"><a href="{{ url_for('index') }}" class="btn btn-success">← Home</a></div>
+</div>
+{% endblock %}

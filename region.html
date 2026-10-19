@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block head %}<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">{% endblock %}
+{% block content %}
+<div class="glass">
+  <h2 class="green-title text-center">📍 Regions Found In India</h2>
+  <h5 class="text-center text-muted">{{ info.name }}</h5>
+  <div class="row g-3 mt-2">
+    <div class="col-md-8"><div id="map"></div></div>
+    <div class="col-md-4">
+      <div class="regions-card">
+        <h4 class="orange-text">📍 Available Regions</h4>
+        {% for s in info.regions %}<div class="region-item">📍 {{ s }}</div>
+        {% else %}<p class="text-muted">No region data added yet.</p>{% endfor %}
+        <a href="javascript:history.back()" class="btn btn-success rounded-pill mt-3">← Back To Result</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const pins = {{ pins|tojson }};
+  const map = L.map('map').setView([22.5, 79], 4.6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap'}).addTo(map);
+  pins.forEach(p => L.marker([p.lat, p.lng]).addTo(map).bindPopup(p.state));
+</script>
+{% endblock %}

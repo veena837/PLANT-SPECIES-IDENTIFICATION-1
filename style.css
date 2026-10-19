@@ -1,0 +1,47 @@
+body{font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;
+  background:linear-gradient(135deg,#e8f7ee 0%,#d6eefc 50%,#fde9ef 100%) fixed;color:#1b3a2a}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin:14px auto;max-width:1100px;
+  background:#fffc;border-radius:18px;padding:10px 20px;box-shadow:0 4px 14px #0001}
+.brand{font-weight:800;color:#0b4d2c;text-decoration:none;font-size:1.2rem}.brand small{display:block;font-size:.65rem;color:#1fa855}
+.btn-about{background:linear-gradient(90deg,#27ae60,#1fc59a);color:#fff;padding:6px 16px;border-radius:10px;text-decoration:none;font-size:.85rem;margin-left:6px}
+.btn-about.admin{background:#34495e}
+.title{font-size:3.4rem;font-weight:900;color:#0b3d24;margin:.5rem 0 0}
+.subtitle{font-family:'Brush Script MT',cursive;font-size:3rem;color:#1fa855;margin-top:-.4rem}
+.upload-card{background:#fffd;border:2px dashed #8fd3a8;border-radius:22px;max-width:420px;margin:24px auto;padding:26px;box-shadow:0 6px 24px #0001}
+.cloud{font-size:2.2rem}
+.preview{max-width:140px;max-height:110px;border-radius:10px;margin-top:14px;border:2px solid #bde5cb}
+.btn-predict{background:linear-gradient(90deg,#27ae60,#1fc59a);color:#fff;border-radius:10px;padding:8px 26px;font-weight:600}
+.btn-predict:hover{color:#fff;filter:brightness(1.08)}
+.features .feat{background:#fffe;border-radius:14px;padding:12px;height:100%;box-shadow:0 3px 10px #0001;text-align:left}
+.feat b{display:block}.feat small{color:#777}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%;margin-bottom:4px}
+.dot.g{background:#4cc23a}.dot.p{background:#ff3d88}.dot.v{background:#7b4dff}.dot.b{background:#2d8cff}
+.glass{background:#fffe;border-radius:22px;padding:28px;box-shadow:0 8px 30px #0002;max-width:900px;margin:0 auto}
+.green-title{color:#0b6b35;font-weight:800}
+.badge-ok{background:#1fa855;color:#fff;border-radius:20px;padding:5px 16px;font-weight:600;font-size:.9rem}
+.img-card{border-radius:14px;overflow:hidden;box-shadow:0 4px 14px #0002;background:#fff}
+.img-card .hd{color:#fff;font-weight:700;padding:6px}.hd.green{background:#0b6b35}.hd.purple{background:#7b2fc9}
+.img-card img{width:100%;height:230px;object-fit:cover}.noref{height:230px;display:flex;align-items:center;justify-content:center;color:#999}
+.info-card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 3px 10px #0001;border-top:5px solid}
+.info-card.blue{border-color:#1d68c8}.info-card.purple{border-color:#8a2be2}
+.info-card b{display:block;font-size:1.1rem}.info-card.blue b{color:#8a2be2}.info-card.purple b{color:#8a2be2}
+.big-btn{display:block;border-radius:14px;color:#fff;padding:18px;text-decoration:none;font-weight:700;font-size:1.1rem}
+.big-btn.orange{background:linear-gradient(135deg,#ff9800,#ef6c00)}.big-btn.green{background:linear-gradient(135deg,#2e7d32,#1b5e20)}
+.big-btn:hover{color:#fff;filter:brightness(1.08)}
+.conf-card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 3px 12px #0001;text-align:left}
+.conf-bar{height:16px;border-radius:10px;background:#e5e5e5;overflow:hidden}
+.conf-fill{height:100%;background:linear-gradient(90deg,#f00,#fc0 50%,#0a0)}
+.conf-val{font-size:2.4rem;font-weight:800;color:#1b8f3d;text-align:right}
+.note{background:#fff8e1;border-left:5px solid #2d8cff;padding:8px 12px;border-radius:8px;font-size:.85rem;margin-top:12px}
+#map{height:420px;border-radius:14px}
+.regions-card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 3px 12px #0001}
+.orange-text{color:#ef6c00;font-weight:800}.region-item{background:#f4f4f4;border-radius:10px;padding:8px 12px;margin:8px 0}
+.med-card{max-width:520px}.brown{color:#6b3a10;font-weight:800}
+.use-item{background:#fff;border-radius:12px;padding:10px 14px;margin:10px 0;box-shadow:0 2px 8px #0001}
+.use-item b{color:#5b1a6b}.use-item div{font-size:.85rem;color:#555}
+.admin-title{color:#2c3e50;font-weight:800}
+.stat{background:#fff;border-radius:14px;padding:16px;text-align:center;box-shadow:0 3px 10px #0001}
+.stat span{display:block;font-weight:700;font-size:.9rem}.stat b{font-size:1.7rem}
+.c-blue{color:#3498db}.c-green{color:#1e8e3e}.c-red{color:#e74c3c}.c-purple{color:#8e44ad}.c-orange{color:#f39c12}
+.panel{background:#fff;border-radius:14px;padding:18px;box-shadow:0 3px 10px #0001}
+.table thead{background:#2c3e50;color:#fff}.thumb{width:56px;height:56px;object-fit:cover;border-radius:8px}
