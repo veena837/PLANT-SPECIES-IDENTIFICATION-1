@@ -1,0 +1,425 @@
+{
+  "aloevera": {
+    "name": "Aloe Vera",
+    "scientific_name": "Aloe barbadensis miller",
+    "description": "A succulent plant with thick, fleshy, gel-filled leaves.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Rajasthan",
+      "Gujarat",
+      "Maharashtra"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Skin Care",
+        "text": "Gel is traditionally applied on burns, minor wounds and dry skin."
+      },
+      {
+        "title": "Digestion",
+        "text": "Used in Ayurveda to support digestion and relieve constipation."
+      },
+      {
+        "title": "Hair Care",
+        "text": "Gel is used traditionally to soothe the scalp and condition hair."
+      },
+      {
+        "title": "Immunity",
+        "text": "Contains vitamins and antioxidants that support general wellness."
+      }
+    ]
+  },
+  "arali": {
+    "name": "Arali (Peepal)",
+    "scientific_name": "Ficus religiosa",
+    "description": "A large sacred fig tree with heart-shaped leaves and a long drip tip.",
+    "regions": [
+      "Karnataka",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Maharashtra",
+      "Tamil Nadu"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Respiratory Health",
+        "text": "Bark and leaves are traditionally used for cough and asthma relief."
+      },
+      {
+        "title": "Skin Disorders",
+        "text": "Leaf paste is used in folk medicine for wounds and skin problems."
+      },
+      {
+        "title": "Digestion",
+        "text": "Traditionally used to ease constipation and stomach complaints."
+      }
+    ]
+  },
+  "curryleaf": {
+    "name": "Curry Leaf",
+    "scientific_name": "Murraya koenigii",
+    "description": "An aromatic leafy shrub widely used in South Indian cooking.",
+    "regions": [
+      "Karnataka",
+      "Kerala",
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Maharashtra"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Digestion",
+        "text": "Helps relieve indigestion, nausea and stomach upset."
+      },
+      {
+        "title": "Hair Health",
+        "text": "Traditionally used to support hair growth and reduce premature greying."
+      },
+      {
+        "title": "Blood Sugar",
+        "text": "Folk medicine uses leaves to support healthy blood sugar levels."
+      },
+      {
+        "title": "Rich in Nutrients",
+        "text": "Source of iron, calcium and antioxidants."
+      }
+    ]
+  },
+  "mint": {
+    "name": "Mint",
+    "scientific_name": "Mentha arvensis",
+    "description": "A fragrant herb with serrated leaves and a cooling taste.",
+    "regions": [
+      "Uttar Pradesh",
+      "Punjab",
+      "Uttarakhand",
+      "Karnataka",
+      "Bihar"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Digestion",
+        "text": "Eases indigestion, gas and bloating."
+      },
+      {
+        "title": "Cold & Cough",
+        "text": "Mint tea and steam are used to relieve congestion."
+      },
+      {
+        "title": "Oral Health",
+        "text": "Freshens breath and is used in oral care."
+      },
+      {
+        "title": "Headache Relief",
+        "text": "Mint oil is traditionally applied to relieve tension headaches."
+      }
+    ]
+  },
+  "neemleaf": {
+    "name": "Neem",
+    "scientific_name": "Azadirachta indica",
+    "description": "A fast-growing evergreen tree known as the 'village pharmacy' of India.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Uttar Pradesh",
+      "Rajasthan"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Skin Health",
+        "text": "Antibacterial properties; used for acne, eczema and skin infections."
+      },
+      {
+        "title": "Dental Care",
+        "text": "Neem twigs have been used as natural toothbrushes."
+      },
+      {
+        "title": "Blood Purifier",
+        "text": "Ayurveda uses neem to support detoxification."
+      },
+      {
+        "title": "Natural Pesticide",
+        "text": "Neem extracts are used in organic farming."
+      }
+    ]
+  },
+  "pumpkin": {
+    "name": "Pumpkin",
+    "scientific_name": "Cucurbita maxima",
+    "description": "A trailing vine with large lobed leaves that produces edible orange fruit.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Maharashtra",
+      "Uttar Pradesh"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Eye Health",
+        "text": "Rich in vitamin A. Improves vision."
+      },
+      {
+        "title": "Heart Health",
+        "text": "Reduces cholesterol. Supports heart function."
+      },
+      {
+        "title": "Digestion",
+        "text": "High fiber improves digestion. Prevents constipation."
+      },
+      {
+        "title": "Immunity Boost",
+        "text": "Strengthens immune system. Rich in nutrients."
+      }
+    ]
+  },
+  "rose": {
+    "name": "Rose",
+    "scientific_name": "Rosa indica",
+    "description": "A flowering shrub with compound serrated leaves and fragrant flowers.",
+    "regions": [
+      "Karnataka",
+      "Maharashtra",
+      "Uttar Pradesh",
+      "Jammu & Kashmir",
+      "West Bengal"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Skin Care",
+        "text": "Rose water is used as a natural toner and skin soother."
+      },
+      {
+        "title": "Digestion",
+        "text": "Petal preparations like gulkand are used as a digestive coolant."
+      },
+      {
+        "title": "Stress Relief",
+        "text": "Rose aroma is traditionally used to calm the mind."
+      }
+    ]
+  },
+  "tamarind": {
+    "name": "Tamarind",
+    "scientific_name": "Tamarindus indica",
+    "description": "A large tree with small, feather-like compound leaves and tangy pods.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Maharashtra",
+      "Kerala"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Digestion",
+        "text": "Pulp is used as a mild natural laxative and digestive aid."
+      },
+      {
+        "title": "Antioxidant",
+        "text": "Rich in polyphenols and vitamin C."
+      },
+      {
+        "title": "Sore Throat",
+        "text": "Leaf and pulp decoctions are used in folk remedies."
+      }
+    ]
+  },
+  "neem": {
+    "name": "Neem",
+    "scientific_name": "Azadirachta indica",
+    "description": "A fast-growing evergreen tree known as the 'village pharmacy' of India.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Uttar Pradesh",
+      "Rajasthan"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Skin Health",
+        "text": "Antibacterial properties; used for acne, eczema and skin infections."
+      },
+      {
+        "title": "Dental Care",
+        "text": "Neem twigs have been used as natural toothbrushes."
+      },
+      {
+        "title": "Blood Purifier",
+        "text": "Ayurveda uses neem to support detoxification."
+      },
+      {
+        "title": "Natural Pesticide",
+        "text": "Neem extracts are used in organic farming."
+      }
+    ]
+  },
+  "jasmine": {
+    "name": "Jasmine",
+    "scientific_name": "Jasminum sambac",
+    "description": "A fragrant flowering shrub with glossy oval leaves, widely grown in India.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Kerala",
+      "West Bengal",
+      "Maharashtra"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Stress Relief",
+        "text": "Jasmine aroma is traditionally used to calm the mind and ease anxiety."
+      },
+      {
+        "title": "Skin Care",
+        "text": "Jasmine oil is used in traditional skin care and as a moisturiser."
+      },
+      {
+        "title": "Headache Relief",
+        "text": "Flower preparations are used in folk medicine for headaches."
+      }
+    ]
+  },
+  "pappaya": {
+    "name": "Papaya",
+    "scientific_name": "Carica papaya",
+    "description": "A fast-growing tropical tree with large, deeply lobed leaves and sweet fruit.",
+    "regions": [
+      "Karnataka",
+      "Andhra Pradesh",
+      "Gujarat",
+      "Maharashtra",
+      "Tamil Nadu"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Digestion",
+        "text": "Contains papain, an enzyme that helps digest protein."
+      },
+      {
+        "title": "Immunity",
+        "text": "Fruit is rich in vitamin C and antioxidants."
+      },
+      {
+        "title": "Folk Use",
+        "text": "Leaf juice is used traditionally in some regions during fever. Consult a doctor before using."
+      }
+    ]
+  },
+  "papaya": {
+    "name": "Papaya",
+    "scientific_name": "Carica papaya",
+    "description": "A fast-growing tropical tree with large, deeply lobed leaves and sweet fruit.",
+    "regions": [
+      "Karnataka",
+      "Andhra Pradesh",
+      "Gujarat",
+      "Maharashtra",
+      "Tamil Nadu"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Digestion",
+        "text": "Contains papain, an enzyme that helps digest protein."
+      },
+      {
+        "title": "Immunity",
+        "text": "Fruit is rich in vitamin C and antioxidants."
+      },
+      {
+        "title": "Folk Use",
+        "text": "Leaf juice is used traditionally in some regions during fever. Consult a doctor before using."
+      }
+    ]
+  },
+  "tomato": {
+    "name": "Tomato",
+    "scientific_name": "Solanum lycopersicum",
+    "description": "A herbaceous plant with compound, toothed leaves that bears edible red fruit.",
+    "regions": [
+      "Karnataka",
+      "Andhra Pradesh",
+      "Maharashtra",
+      "Uttar Pradesh",
+      "West Bengal"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Heart Health",
+        "text": "Rich in lycopene, an antioxidant linked to heart health."
+      },
+      {
+        "title": "Skin Health",
+        "text": "Vitamin C and lycopene support healthy skin."
+      },
+      {
+        "title": "Eye Health",
+        "text": "Contains vitamin A and lutein that support vision."
+      }
+    ]
+  },
+  "tulasi": {
+    "name": "Tulasi (Holy Basil)",
+    "scientific_name": "Ocimum tenuiflorum",
+    "description": "A sacred aromatic herb widely grown in Indian homes.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Uttar Pradesh",
+      "Kerala",
+      "Maharashtra",
+      "Andhra Pradesh"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Cold & Cough",
+        "text": "Tulasi tea and kadha are used traditionally for cough and cold."
+      },
+      {
+        "title": "Immunity",
+        "text": "Ayurveda uses tulasi to support immunity."
+      },
+      {
+        "title": "Stress Relief",
+        "text": "Considered an adaptogen that helps the body handle stress."
+      },
+      {
+        "title": "Respiratory Health",
+        "text": "Used in traditional remedies for sore throat and congestion."
+      }
+    ]
+  },
+  "tulsi": {
+    "name": "Tulasi (Holy Basil)",
+    "scientific_name": "Ocimum tenuiflorum",
+    "description": "A sacred aromatic herb widely grown in Indian homes.",
+    "regions": [
+      "Karnataka",
+      "Tamil Nadu",
+      "Uttar Pradesh",
+      "Kerala",
+      "Maharashtra",
+      "Andhra Pradesh"
+    ],
+    "medicinal_uses": [
+      {
+        "title": "Cold & Cough",
+        "text": "Tulasi tea and kadha are used traditionally for cough and cold."
+      },
+      {
+        "title": "Immunity",
+        "text": "Ayurveda uses tulasi to support immunity."
+      },
+      {
+        "title": "Stress Relief",
+        "text": "Considered an adaptogen that helps the body handle stress."
+      },
+      {
+        "title": "Respiratory Health",
+        "text": "Used in traditional remedies for sore throat and congestion."
+      }
+    ]
+  }
+}
