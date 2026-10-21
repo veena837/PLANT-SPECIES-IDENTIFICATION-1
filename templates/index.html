@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero text-center">
+  <h1 class="title">Plant Species</h1>
+  <h2 class="subtitle">Identification</h2>
+
+  <p class="lead">
+    Upload a plant image to identify its species, scientific name,
+    medicinal uses, and region details.
+  </p>
+
+  <form
+    class="upload-card"
+    action="{{ url_for('predict') }}"
+    method="POST"
+    enctype="multipart/form-data"
+    id="uploadForm"
+  >
+    <div class="cloud">☁️⬆</div>
+
+    <h4>Upload a plant image</h4>
+    <p class="text-muted small">
+      JPG, JPEG, PNG (Maximum 10 MB)
+    </p>
+
+    <!-- Image input -->
+    <input
+      type="file"
+      name="image"
+      id="imageInput"
+      accept="image/jpeg,image/png,.jpg,.jpeg,.png"
+      style="display: none;"
+    >
+
+    <!-- Choose image button -->
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      id="chooseBtn"
+    >
+      🖼 Choose File
+    </button>
+
+    <!-- Selected filename -->
+    <p
+      id="fileName"
+      class="text-muted small mt-2"
+      aria-live="polite"
+    >
+      No image selected
+    </p>
+
+    <!-- Image preview -->
+    <div>
+      <img
+        id="preview"
+        class="preview"
+        alt="Selected plant image preview"
+        style="display: none; max-width: 100%; max-height: 300px; object-fit: contain;"
+      >
+    </div>
+
+    <!-- Error message -->
+    <p
+      id="errorMessage"
+      class="text-danger small mt-2"
+      role="alert"
+      style="display: none;"
+    ></p>
+
+    <!-- Predict button -->
+    <button
+      type="submit"
+      class="btn btn-predict mt-3"
+      id="predictBtn"
+    >
+      🍃 Predict Plant Species
+    </button>
+  </form>
+
+  <div class="row g-3 features">
+
+    <div class="col-6 col-md-3">
+      <div class="feat">
+        <span class="dot g"></span>
+        <b>Identify Species</b>
+        <small>Get plant species predictions</small>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="feat">
+        <span class="dot p"></span>
+        <b>Scientific Name</b>
+        <small>Learn the scientific name</small>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="feat">
+        <span class="dot v"></span>
+        <b>Medicinal Uses</b>
+        <small>Explore medicinal information</small>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="feat">
+        <span class="dot b"></span>
+        <b>Region Details</b>
+        <small>Discover the native region</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("uploadForm");
+  const input = document.getElementById("imageInput");
+  const chooseBtn = document.getElementById("chooseBtn");
+  const preview = document.getElementById("preview");
+  const fileName = document.getElementById("fileName");
+  const errorMessage = document.getElementById("errorMessage");
+
+  const maxSize = 10 * 1024 * 1024;
+  const allowedTypes = ["image/jpeg", "image/png"];
+
+  function showError(message) {
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+  }
+
+  function clearError() {
+    errorMessage.textContent = "";
+    errorMessage.style.display = "none";
+  }
+
+  chooseBtn.addEventListener("click", function () {
+    clearError();
+    input.click();
+  });
+
+  input.addEventListener("change", function () {
+    clearError();
+
+    const file = input.files[0];
+
+    if (!file) {
+      fileName.textContent = "No image selected";
+      preview.removeAttribute("src");
+      preview.style.display = "none";
+      return;
+    }
+
+    const extension = file.name.split(".").pop().toLowerCase();
+
+    if (
+      !allowedTypes.includes(file.type) ||
+      !["jpg", "jpeg", "png"].includes(extension)
+    ) {
+      input.value = "";
+      preview.removeAttribute("src");
+      preview.style.display = "none";
+      fileName.textContent = "No image selected";
+      showError("Please select a JPG, JPEG, or PNG image.");
+      return;
+    }
+
+    if (file.size > maxSize) {
+      input.value = "";
+      preview.removeAttribute("src");
+      preview.style.display = "none";
+      fileName.textContent = "No image selected";
+      showError("The image must be smaller than 10 MB.");
+      return;
+    }
+
+    fileName.textContent = "Selected: " + file.name;
+
+    const imageUrl = URL.createObjectURL(file);
+
+    preview.onload = function () {
+      URL.revokeObjectURL(imageUrl);
+    };
+
+    preview.onerror = function () {
+      URL.revokeObjectURL(imageUrl);
+      preview.style.display = "none";
+      showError("The selected file could not be displayed as an image.");
+    };
+
+    preview.src = imageUrl;
+    preview.style.display = "block";
+  });
+
+  form.addEventListener("submit", function (event) {
+    clearError();
+
+    if (!input.files || input.files.length === 0) {
+      event.preventDefault();
+      showError("Please choose a plant image before predicting.");
+      return;
+    }
+
+    const file = input.files[0];
+
+    if (
+      !allowedTypes.includes(file.type) ||
+      !["jpg", "jpeg", "png"].includes(
+        file.name.split(".").pop().toLowerCase()
+      )
+    ) {
+      event.preventDefault();
+      showError("Please select a JPG, JPEG, or PNG image.");
+      return;
+    }
+
+    if (file.size > maxSize) {
+      event.preventDefault();
+      showError("The image must be smaller than 10 MB.");
+    }
+  });
+});
+</script>
+{% endblock %}
