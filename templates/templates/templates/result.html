@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="glass text-center">
+  <h2 class="green-title">🌿 Plant Identification Result</h2>
+  <span class="badge-ok">✔ Plant Identified Successfully!</span>
+
+  <div class="row g-3 mt-3 justify-content-center">
+    <div class="col-md-5">
+      <div class="img-card"><div class="hd green">📷 Uploaded Image</div>
+        <img src="{{ url_for('static', filename='uploads/' + img) }}" alt="uploaded"></div>
+    </div>
+    <div class="col-md-5">
+      <div class="img-card"><div class="hd purple">🌱 Reference Image</div>
+        {% if ref %}<img src="{{ ref }}" alt="reference">
+        {% else %}<div class="noref">No reference image</div>{% endif %}</div>
+    </div>
+  </div>
+
+  <h3 class="mt-4 green-title">🌱 Plant Information</h3>
+  <div class="row g-3 justify-content-center">
+    <div class="col-md-5"><div class="info-card blue"><b>Common Name</b><div>{{ info.name }}</div></div></div>
+    <div class="col-md-5"><div class="info-card purple"><b>Scientific Name</b><div><i>{{ info.scientific_name }}</i></div></div></div>
+    <div class="col-md-5"><a class="big-btn orange" href="{{ url_for('region', cls=cls) }}">📍 Regions Found In India<br><small>view details</small></a></div>
+    <div class="col-md-5"><a class="big-btn green" href="{{ url_for('medicinal', cls=cls) }}">🌿 Medicinal Uses<br><small>view details</small></a></div>
+  </div>
+
+  <div class="conf-card mt-4">
+    <h4>🎯 Confidence Score</h4>
+    <div class="conf-bar"><div class="conf-fill" style="width: {{ conf }}%"></div></div>
+    <div class="conf-val">{{ conf }}%</div>
+    <div class="small text-muted">{{ label }}</div>
+    {% if conf < 50 %}<div class="alert alert-warning mt-2 mb-0">The model is not sure about this image. Try a clearer, closer photo of a single leaf.</div>{% endif %}
+    <div class="note">⚠ This information is for educational purposes only. Consult a medical professional before medicinal use.</div>
+  </div>
+  <a href="{{ url_for('index') }}" class="btn btn-outline-success mt-3">← Back</a>
+</div>
+{% endblock %}
