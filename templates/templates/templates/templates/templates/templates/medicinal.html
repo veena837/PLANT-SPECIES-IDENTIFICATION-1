@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="glass med-card mx-auto">
+  <h2 class="text-center brown">🌿 {{ info.name }} Medicinal Uses</h2>
+  <p class="text-center text-success small">Natural Healing Benefits &amp; Herbal Applications</p>
+  <p class="text-center text-muted"><i>{{ info.scientific_name }}</i> — {{ info.description }}</p>
+  {% for u in info.medicinal_uses %}
+    <div class="use-item"><b>• {{ u.title }}</b><div>{{ u.text }}</div></div>
+  {% else %}<p class="text-center text-muted">No medicinal details added yet.</p>{% endfor %}
+  <p class="text-center fw-bold text-success mt-3">💚 Nature is the Best Healer 🌿</p>
+  <div class="note">⚠ For educational purposes only. Consult a medical professional before medicinal use.</div>
+  <div class="text-center"><a href="javascript:history.back()" class="btn btn-success rounded-pill mt-3">← Back To Result</a></div>
+</div>
+{% endblock %}
