@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center admin-title">📊 Plant Species Prediction Admin Dashboard</h2>
+
+<div class="row g-3 my-3">
+  <div class="col-6 col-md-3"><div class="stat"><span>Total Uploads</span><b class="c-blue">{{ total }}</b></div></div>
+  <div class="col-6 col-md-3"><div class="stat"><span>Correct Predictions</span><b class="c-green">{{ correct }}</b></div></div>
+  <div class="col-6 col-md-3"><div class="stat"><span>Wrong Predictions</span><b class="c-red">{{ wrong }}</b></div></div>
+  <div class="col-6 col-md-3"><div class="stat"><span>Accuracy</span><b class="c-purple">{{ accuracy }}%</b></div></div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-5"><div class="panel"><canvas id="pie" height="220"></canvas></div></div>
+  <div class="col-md-7"><div class="panel">
+    <h5>System Health</h5>
+    <p class="mb-1">{{ '✅ CNN Model Active' if model_ok else '❌ Model not trained (run train_model.py)' }}</p>
+    <p class="mb-1">✅ Prediction System Running</p>
+    <p class="mb-1">Pending verification: <b>{{ pending }}</b></p>
+    {% if model_info %}<p class="mb-1">Model: {{ model_info.type }} · Validation accuracy {{ model_info.validation_accuracy }}% · {{ model_info.classes }} classes</p>{% endif %}
+    {% if evaluated == 0 %}<div class="alert alert-secondary mt-2 mb-0">No verified predictions yet.</div>
+    {% elif accuracy >= 80 %}<div class="alert alert-success mt-2 mb-0">✅ Model Performance is Good</div>
+    {% else %}<div class="alert alert-danger mt-2 mb-0">⚠ Model Requires Improvement</div>{% endif %}
+    {% if retrain %}<div class="alert alert-warning mt-2 mb-0">Model Retraining Recommended</div>{% endif %}
+  </div></div>
+</div>
+
+<div class="panel mt-3 table-responsive">
+  {% if not history %}<p class="text-center m-3">No prediction records available</p>
+  {% else %}
+  <table class="table align-middle text-center">
+    <thead><tr><th>Uploaded Image</th><th>Predicted Species</th><th>Actual Species</th><th>Confidence</th><th>Status</th><th>Prediction Time</th><th>Action</th></tr></thead>
+    <tbody>
+    {% for h in history %}
+      <tr>
+        <td><img src="{{ url_for('static', filename='uploads/' + h.image) }}" class="thumb"></td>
+        <td>{{ h.predicted_name }}</td>
+        <td>{{ h.actual_name }}</td>
+        <td>{{ h.confidence }}%<br><small class="text-muted">{{ h.level }}</small></td>
+        <td>
+          {% if h.status == 'Correct' %}<b class="c-green">Correct</b>
+          {% elif h.status == 'Wrong' %}<b class="c-red">Wrong</b>
+          {% else %}<b class="c-orange">Pending</b>{% endif %}
+        </td>
+        <td>{{ h.time }}</td>
+        <td>
+          <form method="post" action="{{ url_for('verify') }}" class="d-inline">
+            <input type="hidden" name="id" value="{{ h.id }}">
+            {% if h.status == 'Pending' %}
+              <button name="action" value="correct" class="btn btn-sm btn-success">✓ Correct</button>
+              <button name="action" value="wrong" class="btn btn-sm btn-danger">✗ Wrong</button>
+            {% endif %}
+          </form>
+          <form method="post" action="{{ url_for('delete_record', pid=h.id) }}" class="d-inline" onsubmit="return confirm('Delete this record?')">
+            <button class="btn btn-sm btn-outline-secondary">🗑</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>
+  new Chart(document.getElementById('pie'), {
+    type: 'pie',
+    data: { labels: ['Correct Predictions', 'Wrong Predictions'],
+            datasets: [{ data: [{{ correct }}, {{ wrong }}], backgroundColor: ['#27ae60', '#e74c3c'] }] },
+    options: { plugins: { legend: { position: 'top' } } }
+  });
+</script>
+{% endblock %}
